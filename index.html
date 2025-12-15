@@ -4,64 +4,205 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Begoyim Koraboeva</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   <meta name="description" content="Begoyim Koraboeva - content production, proofreading and digital publishing. Candidate for Digital Production Assistant at the Blavatnik School of Government." />
+
   <style>
     :root{
-      --bg:#050608;
-      --panel:#0e1519;
-      --muted:#9aa6b2;
+      --bg: linear-gradient(
+        180deg,
+        #f7fbff 0%,
+        #eaf6ff 40%,
+        #d9f0ff 100%
+      );
+
+      --panel:#ffffff;
+      --muted:#5f6f7a;
       --accent:#4bd0b0;
-      --glass: rgba(255,255,255,0.03);
+      --glass: rgba(0,0,0,0.04);
       --max-w:980px;
       --radius:12px;
       --mono: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       --serif: 'Playfair Display', Georgia, serif;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;padding:36px;min-height:100%;background:radial-gradient(1200px 600px at 10% 10%, rgba(75,208,176,0.04), transparent), var(--bg);color:#e6eef2;font-family:var(--mono);-webkit-font-smoothing:antialiased;}
+
+    body{
+      margin:0;
+      padding:36px;
+      min-height:100%;
+      background:var(--bg);
+      color:#1e2a32;
+      font-family:var(--mono);
+      -webkit-font-smoothing:antialiased;
+    }
+
     .wrap{max-width:var(--max-w);margin:0 auto}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr 360px;gap:48px}
-    .hero{grid-column:1 / 2;display:flex;gap:18px;align-items:center}
-    .avatar{width:110px;height:110px;border-radius:10px;background:linear-gradient(180deg,#081018,#071014);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.04);font-family:var(--serif);font-size:34px;color:var(--accent)}
-    h1{font-family:var(--serif);font-size:22px;margin:0}
-    p.lead{margin:10px 0 0 0;color:var(--muted);font-size:15px;line-height:1.6}
-    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .pill{background:var(--glass);padding:6px 10px;border-radius:10px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .card{
+      background:linear-gradient(180deg,#ffffff,#f5faff);
+      border:1px solid rgba(0,0,0,0.06);
+      border-radius:var(--radius);
+      padding:40px;
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:48px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    .hero{
+      grid-column:1 / 2;
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+
+    .avatar{
+      width:110px;
+      height:110px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#e6f4ff,#d2ecff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(0,0,0,0.08);
+      font-family:var(--serif);
+      font-size:34px;
+      color:#2aa6c8;
+    }
+
+    h1{
+      font-family:var(--serif);
+      font-size:22px;
+      margin:0;
+    }
+
+    p.lead{
+      margin:10px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .pill{
+      background:var(--glass);
+      padding:6px 10px;
+      border-radius:10px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(0,0,0,0.05);
+    }
 
     .main{padding-top:6px}
+
     .section{margin-bottom:32px}
-    .section h2{font-size:14px;margin:0 0 14px 0;color:#dff6ef;font-family:var(--serif);letter-spacing:0.04em;text-transform:uppercase}
-    .muted{color:var(--muted);font-size:15px;line-height:1.7;max-width:58ch}
+
+    .section h2{
+      font-size:14px;
+      margin:0 0 14px 0;
+      color:#3a5f73;
+      font-family:var(--serif);
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+      max-width:58ch;
+    }
+
     .item{margin-bottom:18px}
+
     .item-title{font-weight:700}
-    .small{font-size:13px;color:var(--muted)}
 
-    .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-    .skill{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--muted)}
+    .small{
+      font-size:13px;
+      color:var(--muted);
+    }
 
-    aside.contact{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    .contact a{color:var(--accent);text-decoration:none;font-weight:700}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#2fb2a0);color:#042426;text-decoration:none;font-weight:700}
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
 
-    footer{grid-column:1 / -1;margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+    .skill{
+      background:transparent;
+      border:1px solid rgba(0,0,0,0.06);
+      padding:6px 8px;
+      border-radius:8px;
+      font-size:13px;
+      color:var(--muted);
+    }
 
-    /* layout for smaller screens */
+    aside.contact{
+      background:linear-gradient(180deg,#ffffff,#f0f8ff);
+      padding:20px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.06);
+    }
+
+    .contact a{
+      color:#2aa6c8;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .cta{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,#6fd3f5,#4aaedb);
+      color:#ffffff;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    footer{
+      grid-column:1 / -1;
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
     @media (max-width:920px){
       .card{grid-template-columns:1fr;}
       .avatar{width:90px;height:90px;font-size:28px}
     }
 
-    /* small utilities */
-    .muted-block{background:rgba(255,255,255,0.01);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+    .muted-block{
+      background:rgba(0,0,0,0.03);
+      padding:10px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.05);
+      font-size:13px;
+      color:var(--muted);
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <main class="card" role="main">
+
       <!-- Header -->
       <header class="hero" style="grid-column:1 / -1;flex-direction:column;align-items:flex-start;gap:14px">
         <div style="display:flex;align-items:center;gap:18px">
@@ -71,6 +212,7 @@
             <p class="lead">Writer • Educator • Digital Designer</p>
           </div>
         </div>
+
         <div class="meta">
           <div class="pill">Proofreading</div>
           <div class="pill">Typography</div>
@@ -81,9 +223,12 @@
 
       <!-- Main content -->
       <div class="main" style="grid-column:1 / 2">
-        <section class="section about">
+
+        <section class="section">
           <h2>Professional summary</h2>
-          <p class="muted">I support high-quality publication workflows by combining careful proofreading, disciplined document formatting, and clear communication with authors and suppliers. My background in academic research and teaching has given me strong editorial judgement, an eye for layout, and the ability to manage version control and schedules. I am pursuing a Diploma in Creative Writing at Oxford to deepen editorial skills and refine written outputs for diverse audiences.</p>
+          <p class="muted">
+            I support high-quality publication workflows by combining careful proofreading, disciplined document formatting, and clear communication with authors and suppliers. My background in academic research and teaching has given me strong editorial judgement, an eye for layout, and the ability to manage version control and schedules. I am pursuing a Diploma in Creative Writing at Oxford to deepen editorial skills and refine written outputs for diverse audiences.
+          </p>
         </section>
 
         <section class="section">
@@ -91,77 +236,92 @@
           <div class="skills">
             <div class="skill">Proofreading and copy editing</div>
             <div class="skill">Typesetting and layout (Word, templates)</div>
-            <!-- <div class="skill">PDF production and prepress checks</div> -->
-            <div class="skill">Designing and formatting in Adobe inDesign</div>
-            <!-- <div class="skill">Version control and file management</div> -->
+            <div class="skill">Designing and formatting in Adobe InDesign</div>
             <div class="skill">Stakeholder liaison and coordination</div>
-            <!-- <div class="skill">Accessibility awareness</div> -->
           </div>
         </section>
 
         <section class="section">
           <h2>Experience relevant to the role</h2>
+
           <div class="item">
             <div class="item-title">Publication support and proofreading</div>
-            <div class="small">Prepared and reviewed lesson materials and programme documentation, ensuring clarity, consistency and adherence to institutional standards. Regularly proofread materials for grammar, style and layout prior to distribution.</div>
+            <div class="small">
+              Prepared and reviewed lesson materials and programme documentation, ensuring clarity, consistency and adherence to institutional standards. Regularly proofread materials for grammar, style and layout prior to distribution.
+            </div>
           </div>
+
           <div class="item">
             <div class="item-title">Document preparation and delivery quality</div>
-            <div class="small">Prepared, adapted, and delivered lesson materials for both in-person and online classes, ensuring consistency, clarity, and quality across formats. Regularly reviewed and refined documents and supporting materials to maintain a coherent structure, accurate language, and a professional standard for different audiences.</div>
+            <div class="small">
+              Prepared, adapted, and delivered lesson materials for both in-person and online classes, ensuring consistency, clarity, and quality across formats. Regularly reviewed and refined documents and supporting materials to maintain a coherent structure, accurate language, and a professional standard for different audiences.
+            </div>
           </div>
+
           <div class="item">
             <div class="item-title">Digital publishing</div>
-            <div class="small">Maintain an active Medium blog focused on education, culture, and cross-cultural experience. Publish long-form written pieces with attention to structure, clarity, tone, and audience. Experienced in drafting, editing, revising, and presenting content in a clean digital format suitable for public readership.</div>
+            <div class="small">
+              Maintain an active Medium blog focused on education, culture, and cross-cultural experience. Publish long-form written pieces with attention to structure, clarity, tone, and audience.
+            </div>
           </div>
+
           <div class="item">
             <div class="item-title">Coordination and production workflow</div>
-            <div class="small">Coordinated schedules and materials for group programmes, liaised with colleagues to manage drafts and final proofs, and tracked versions to ensure timely delivery of content.</div>
+            <div class="small">
+              Coordinated schedules and materials for group programmes, liaised with colleagues to manage drafts and final proofs, and tracked versions to ensure timely delivery of content.
+            </div>
           </div>
         </section>
 
         <section class="section">
           <h2>Education and training</h2>
+
           <div class="item">
             <div class="item-title">Undergraduate Diploma in Creative Writing</div>
-            <div class="small">Oxford Lifelong Learning - ongoing.</div>
+            <div class="small">Oxford Lifelong Learning — ongoing</div>
           </div>
+
           <div class="item">
             <div class="item-title">BA International Relations</div>
-            <div class="small">Tokyo International University - 2018 to 2022.</div>
+            <div class="small">Tokyo International University — 2018–2022</div>
           </div>
+
           <div class="item">
             <div class="item-title">TESOL / TEFL Certificate</div>
-            <div class="small">World TESOL Academy.</div>
+            <div class="small">World TESOL Academy</div>
           </div>
         </section>
 
         <section class="section">
           <h2>Portfolio and documents</h2>
-          <!-- <p class="muted-block">Download tailored application materials and examples of editorial work.</p> -->
-          <p style="margin-top:14px"><a class="cta" href="/cv.pdf" download>Download tailored CV (PDF)</a></p>
-          <!-- <p style="margin-top:10px"><a class="cta" href="/supporting-statement.pdf" download>Download supporting statement (PDF)</a></p> -->
+          <p style="margin-top:14px">
+            <a class="cta" href="/cv.pdf" download>Download tailored CV (PDF)</a>
+          </p>
         </section>
+
       </div>
 
       <!-- Sidebar -->
       <aside class="contact" style="grid-column:2 / 3">
         <h2>Contact</h2>
         <p class="small">Oxford, United Kingdom</p>
-        <p style="margin-top:14px"><strong>Email</strong><br><a href="mailto:begoyim.koraboeva@gmail.com">begoyim.koraboeva@gmail.com</a></p>
-        <!-- <p style="margin-top:10px"><strong>Phone</strong><br><span class="small">+44 7493 913698</span></p> -->
-        <p style="margin-top:10px"><strong>Online</strong><br>
-        <a href="https://medium.com/@begoyimkoraboeva" target="_blank" rel="noopener">Medium</a><br>
-        <a href="https://www.linkedin.com/in/begoyim-koraboeva/" target="_blank" rel="noopener">LinkedIn</a></p>
-        <!-- <a class="cta" href="mailto:begoyim.koraboeva@gmail.com" style="margin-top:18px">Contact to apply</a> -->
+
+        <p style="margin-top:14px">
+          <strong>Email</strong><br>
+          <a href="mailto:begoyim.koraboeva@gmail.com">begoyim.koraboeva@gmail.com</a>
+        </p>
+
+        <p style="margin-top:10px">
+          <strong>Online</strong><br>
+          <a href="https://medium.com/@begoyimkoraboeva" target="_blank" rel="noopener">Medium</a><br>
+          <a href="https://www.linkedin.com/in/begoyim-koraboeva/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
       </aside>
-      </div>
-<!-- 
-        <a class="cta" href="mailto:begoyim.koraboeva@gmail.com">Contact to apply</a> -->
-      <!-- </aside> -->
 
       <footer>
         <div>Begoyim Koraboeva © 2026</div>
       </footer>
+
     </main>
   </div>
 </body>
